@@ -2,6 +2,8 @@ package com.example.esoftwaricareplica;
 
 import android.os.Bundle;
 
+import com.example.esoftwaricareplica.models.Students;
+import com.example.esoftwaricareplica.ui.students.StudentFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,9 @@ public class Home extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+        StudentFragment.studentsList.add(new Students("Kritik Ranjit", "21", "Male", "Chagal", R.drawable.male));
+        StudentFragment.studentsList.add(new Students("Christina Shrestha", "20", "Female", "Ason", R.drawable.female));
+        StudentFragment.studentsList.add(new Students("Gayyyy", "25", "Others", "Kathmandu", R.drawable.other));
     }
 
 }

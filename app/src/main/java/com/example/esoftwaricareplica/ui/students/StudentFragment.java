@@ -15,6 +15,10 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.esoftwaricareplica.R;
+import com.example.esoftwaricareplica.models.Students;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +36,7 @@ public class StudentFragment extends Fragment implements RadioGroup.OnCheckedCha
         // Required empty public constructor
     }
 
+    public static List<Students> studentsList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,13 +60,16 @@ public class StudentFragment extends Fragment implements RadioGroup.OnCheckedCha
     @Override
     public void onCheckedChanged(RadioGroup group, int i) {
         if (i == R.id.rbmale) {
+            img = R.drawable.male;
             gender = "Male";
         }
 
         if (i == R.id.rbfemale) {
+            img = R.drawable.female;
             gender = "Female";
         }
         if (i == R.id.others) {
+            img = R.drawable.other;
             gender = "Others";
         }
 
@@ -69,10 +77,9 @@ public class StudentFragment extends Fragment implements RadioGroup.OnCheckedCha
 
     @Override
     public void onClick(View v) {
-        nametxt = fullname.getText().toString();
-        agetxt = age.getText().toString();
-        addresstxt = address.getText().toString();
-
+        if (v.getId() == R.id.btnsave) {
+            addStudent();
+        }
     }
 
     private boolean validate() {
@@ -100,6 +107,16 @@ public class StudentFragment extends Fragment implements RadioGroup.OnCheckedCha
         }
 
         return true;
+    }
+
+    private void addStudent() {
+        nametxt = fullname.getText().toString();
+        agetxt = age.getText().toString();
+        addresstxt = address.getText().toString();
+        if (validate()) {
+            studentsList.add(new Students(nametxt, agetxt, gender, addresstxt, img));
+            Toast.makeText(root.getContext(), "Student Added!", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

@@ -1,61 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".LoginPage">
+    android:layout_height="wrap_content">
 
-    <ImageView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/logo" />
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".LoginPage">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/username"
-            style="@style/text"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Enter Username:"
-            android:padding="10dp"
-            android:textColor="#000" />
+            android:layout_height="200dp"
+            android:src="@drawable/logo" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true">
-
-
-        <EditText
-            android:id="@+id/password"
-            style="@style/text"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/username"
+                style="@style/text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Enter Username:"
+                android:padding="10dp"
+                android:textColor="#000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
+
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter Password:"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="#000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="150dp"
             android:layout_height="50dp"
-            android:hint="Enter Password:"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="#000" />
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btnstyle"
+            android:text="Login"
+            android:textColor="#ffffff" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/btnlogin"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btnstyle"
-        android:text="Login"
-        android:textColor="#ffffff" />
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
