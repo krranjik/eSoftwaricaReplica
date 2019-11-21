@@ -25,7 +25,7 @@ public class Home extends AppCompatActivity {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_students)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
         StudentFragment.studentsList.add(new Students("Kritik Ranjit", "21", "Male", "Chagal", R.drawable.male));
         StudentFragment.studentsList.add(new Students("Christina Shrestha", "20", "Female", "Ason", R.drawable.female));
